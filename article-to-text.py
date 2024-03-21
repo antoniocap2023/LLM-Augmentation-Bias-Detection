@@ -1,3 +1,24 @@
+from langchain_community.chat_models import ChatOpenA
+from dotenv import load_dotenv
+import os
+from langchain.schema import (
+    HumanMessage,
+    SystemMessage
+)
+
+#import requests
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+
+
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", api_key=os.getenv("OPENAI_API_KEY"))
+
+
+article_txt=open("article.txt","r")
+article_str = article_txt.read() # string of the entire file
+
+
 
 """
 loader = PyPDFLoader(file_path=file_path)
