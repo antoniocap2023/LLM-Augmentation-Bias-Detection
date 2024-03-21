@@ -1,6 +1,7 @@
-from langchain_community.chat_models import ChatOpenA
+from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 import os
+import openai
 from langchain.schema import (
     HumanMessage,
     SystemMessage
@@ -15,7 +16,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", api_key=os.getenv("OPENAI_API_KEY"))
 
 
-article_txt=open("article.txt","r")
+article_txt=open("article1.txt","r")
 article_str = article_txt.read() # string of the entire file
 
 
